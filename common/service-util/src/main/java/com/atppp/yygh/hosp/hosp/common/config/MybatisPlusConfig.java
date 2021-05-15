@@ -1,4 +1,4 @@
-package com.atppp.yygh.common.config;
+package com.atppp.yygh.hosp.hosp.common.config;
 
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
@@ -27,7 +27,7 @@ public class MybatisPlusConfig {
     }
 
     /**
-     * 乐观锁配置
+     * 乐观锁配置（增加版本号）
      */
     @Bean
     public OptimisticLockerInterceptor optimisticLockerInterceptor() {
