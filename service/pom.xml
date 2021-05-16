@@ -20,6 +20,11 @@
     <dependencies>
         <dependency>
             <groupId>com.atppp.yygh</groupId>
+            <artifactId>common-util</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.atppp.yygh</groupId>
             <artifactId>service-util</artifactId>
             <version>1.0</version>
         </dependency>
