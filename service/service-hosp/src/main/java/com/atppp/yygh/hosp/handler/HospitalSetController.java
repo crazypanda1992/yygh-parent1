@@ -6,6 +6,7 @@ import com.atppp.yygh.model.hosp.HospitalSet;
 import com.atppp.yygh.hosp.service.HospitalSetService;
 import com.atppp.yygh.vo.hosp.HospitalSetQueryVo;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -19,6 +20,7 @@ import java.util.Random;
 @Api(tags = "医院设置管理")     //用于swagger 类名显示
 @RestController   //控制层  返回Josn数据
 @RequestMapping("/admin/hosp/hospitalSet")   //表明 请求网址 映射的路径
+@CrossOrigin    //解决跨域访问的问题
 public class HospitalSetController {
 
     //注入service
@@ -73,8 +75,8 @@ public class HospitalSetController {
             wrapper.eq("hoscode",hoscode );
         }
 
-        //条用方法实现分页查询
-        Page<HospitalSet> pageHospSet = hospitalSetService.page(page, wrapper);
+        //调用方法实现分页查询
+        IPage<HospitalSet> pageHospSet = hospitalSetService.page(page, wrapper);
         return Result.ok(pageHospSet);
     }
     //4.添加医院设置
