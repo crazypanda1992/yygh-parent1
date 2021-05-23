@@ -1,7 +1,6 @@
 package com.atppp.yygh.model.hosp;
 
 import com.atppp.yygh.model.base.BaseMongoEntity;
-import com.atppp.yygh.model.base.BaseMongoEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

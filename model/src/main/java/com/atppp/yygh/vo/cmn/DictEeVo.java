@@ -1,7 +1,6 @@
 package com.atppp.yygh.vo.cmn;
 
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.alibaba.excel.metadata.BaseRowModel;
 import lombok.Data;
 
 /**

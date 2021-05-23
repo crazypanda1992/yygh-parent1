@@ -1,9 +1,9 @@
-package com.atppp.yygh.hosp.handler;
+package com.atppp.yygh.hosp.controller;
 
 import com.atppp.yygh.common.result.Result;
 import com.atppp.yygh.common.utils.MD5;
-import com.atppp.yygh.model.hosp.HospitalSet;
 import com.atppp.yygh.hosp.service.HospitalSetService;
+import com.atppp.yygh.model.hosp.HospitalSet;
 import com.atppp.yygh.vo.hosp.HospitalSetQueryVo;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -82,9 +82,7 @@ public class HospitalSetController {
     //4.添加医院设置
     @PostMapping("saveHospitalSet")
     public Result saveHospitalSet(@RequestBody HospitalSet hospitalSet){
-            // 状态 和 密钥 是需要手动生成
-        //设置状态   1使用 0不能使用
-        hospitalSet.setStatus(1);
+            // 密钥 是需要手动生成
         //签名密钥
         Random random=new Random();
         hospitalSet.setSignKey(MD5.encrypt(System.currentTimeMillis() +"" +random.nextInt(1000)));

@@ -7,7 +7,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Api(description = "数据字典")
@@ -18,6 +20,21 @@ public class DictController {
     @Autowired
     private DictService dictService;
 
+    //导入数据字典(即上传)
+    @PostMapping("importData")
+    public Result importData(MultipartFile file){
+        dictService.importDictData(file);
+        return Result.ok();
+    }
+
+
+    //导出数据字典(即下载)
+    @ApiOperation(value ="导出" )
+    @GetMapping("/exportData")
+    public void exportData(HttpServletResponse response){
+        dictService.exportData(response);
+
+    }
     //根据数据id查询子数据列表
     @ApiOperation(value ="根据数据id查询子数据列表" )
     @GetMapping("findChildData/{id}")
